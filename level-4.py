@@ -10,9 +10,8 @@ pattern = re.compile("and the next nothing is (\d+)")
 
 while True:
     content = urlopen(uri % num).read().decode('utf-8')
+    print(content)
     match = pattern.search(content)
     if match == None:
         break
     num = match.group(1)
-
-# Answer: peak.html
